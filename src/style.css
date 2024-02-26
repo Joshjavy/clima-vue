@@ -47,10 +47,10 @@ body {
 .formulario input[type="text"], 
 .formulario select {
   padding: 1rem;
-  background-color: transparent;
+/*  background-color: transparent !important;*/
   border: .3rem solid var(--blanco);
   border-radius: 1rem;
-  color: var(--blanco);
+  color: #2b353b; /* var(--blanco);*/
   font-weight: 400;
   font-size: 1.8rem;
 }
