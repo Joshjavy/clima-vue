@@ -7,6 +7,10 @@
         })
 
     const error =ref ('');
+    
+    const emit = defineEmits(['obtener-climna']);
+
+
 
     const paises = [
         { codigo: 'US', nombre: 'Estados Unidos' },
@@ -24,7 +28,7 @@
             return;
         }
         error.value ='';  
-        console.log('pase');
+        emit('obtener-climna');
 
     }
 
