@@ -28,7 +28,7 @@
             return;
         }
         error.value ='';  
-        emit('obtener-climna');
+        emit('obtener-climna',busqueda);
 
     }
 
