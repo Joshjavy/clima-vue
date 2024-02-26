@@ -1,26 +1,37 @@
 <script setup>
-import { initCustomFormatter } from 'vue';
+    import { reactive, ref} from 'vue';
+    const busqueda = reactive({
+        ciudad :'',
+        pais:'',
+    })
 
-const paises = [
-    { codigo: 'US', nombre: 'Estados Unidos' },
-    { codigo: 'MX', nombre: 'México' },
-    { codigo: 'AR', nombre: 'Argentina' },
-    { codigo: 'CO', nombre: 'Colombia' },
-    { codigo: 'CR', nombre: 'Costa Rica' },
-    { codigo: 'ES', nombre: 'España' },
-    { codigo: 'PE', nombre: 'Perú' }
-]
+    const paises = [
+        { codigo: 'US', nombre: 'Estados Unidos' },
+        { codigo: 'MX', nombre: 'México' },
+        { codigo: 'AR', nombre: 'Argentina' },
+        { codigo: 'CO', nombre: 'Colombia' },
+        { codigo: 'CR', nombre: 'Costa Rica' },
+        { codigo: 'ES', nombre: 'España' },
+        { codigo: 'PE', nombre: 'Perú' }
+    ]
 </script>
 <template>
     <form class="formulario">
         <div class="campo">
             <label for="ciudad">Ciudad</label>
-            <input type="text" id="ciudad" placeholder="Ciudad" class="" />
+            <input type="text"
+                id="ciudad"
+                placeholder="Ciudad"
+                class=""
+                v-model="busqueda.ciudad"
+            />
         </div>
 
         <div class="campo">
             <label for="pais">pais</label>
-            <select id="pais">
+            <select id="pais"
+                v-model="busqueda.pais"
+            >
                 <option value=""> -- Seleccione un pais -- </option>
                 <option 
                 v-for="pais in paises"
